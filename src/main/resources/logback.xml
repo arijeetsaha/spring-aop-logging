@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+        <jmxConfigurator />
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+                <layout class="ch.qos.logback.classic.PatternLayout">
+                        <Pattern>
+                                %d{dd/MM/YY HH:mm:ss.SSS} - %-5level [%-5thread] - %lo{5}.%M\(%line\) - %msg%n
+                        </Pattern>
+                </layout>
+        </appender>
+
+        <logger name="com.example" level="debug" additivity="false">
+                <appender-ref ref="STDOUT" />
+        </logger>
+        <logger name="*" level="debug" additivity="false">
+                <appender-ref ref="STDOUT" />
+        </logger>
+        <root level="warn">
+                <appender-ref ref="STDOUT" />
+        </root>
+
+</configuration>
+
